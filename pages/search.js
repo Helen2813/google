@@ -2,16 +2,21 @@ import React from 'react';
 import Head from "next/head";
 import SearchHeader from "../components/SearchHeader";
 import Response from "../Response";
+import SearchResults from "../components/SearchResults";
+import { useRouter } from 'next/router'
 
 function Search({ results }) {
-  console.log(results)
+  const router = useRouter();
+
   return (
     <div>
       <Head>
-        <title>Search Page</title>
+        <title>{router.query.term} - Search Page</title>
       </Head>
 
       <SearchHeader />
+
+      <SearchResults results={results} />
     </div>
   );
 }
