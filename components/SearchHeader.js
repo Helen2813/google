@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { MicrophoneIcon, SearchIcon, XIcon } from "@heroicons/react/solid";
 import User from "./User";
+import SearchHeaderOptions from "./SearchHeaderOptions";
 
 const SearchHeader = () => {
   const router = useRouter();
@@ -13,7 +14,7 @@ const SearchHeader = () => {
 
     if (!term.trim()) return;
 
-    router.push(`/search?term=${term.trim()}`);
+    router.push(`/search?term=${term.trim()}&searchType=`);
   }
 
   return (
@@ -26,6 +27,7 @@ const SearchHeader = () => {
           height="40"
           objectFit="contain"
           className="cursor-pointer"
+          alt="google-image"
         />
         <form
           className="flex border border-gray-200 rounded-full shadow-lg px-6 py-3 ml-10 mr-5 flex-grow max-w-3xl items-center"
@@ -41,6 +43,7 @@ const SearchHeader = () => {
         </form>
         <User className="ml-auto whitespace-nowrap" />
       </div>
+      <SearchHeaderOptions />
     </header>
   );
 };
