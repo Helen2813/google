@@ -7,7 +7,7 @@ function User({ className }) {
       <>
         <img
           src={session.user.image} alt="avatar"
-          className={`h-10 w-10 rounded-full hover:bg-gray-200 cursor-pointer rounded-lg ${className}`}
+          className={`h-10 w-10 rounded-full hover:bg-gray-200 cursor-pointer ${className}`}
           onClick={signOut}
         />
       </>
